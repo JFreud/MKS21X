@@ -1,5 +1,5 @@
-clone
-pull
-add
-commit
-push
+clone - copies repo to local
+pull - synchronizes local file with active github one
+add - tracks file
+commit - finalize the file
+push - upload

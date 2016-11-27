@@ -3,5 +3,3 @@ pull - synchronizes local file with active github one
 add - tracks file
 commit - finalize the file
 push - upload
-
-edit* from home

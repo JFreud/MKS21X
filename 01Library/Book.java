@@ -1,9 +1,6 @@
 public class Book {
     private String author, title, ISBN;
     public Book() {
-	author = "Unknown";
-	title = "Unknown";
-	ISBN = "Unknown";
     }
 
     public Book(String author, String title, String ISBN) {

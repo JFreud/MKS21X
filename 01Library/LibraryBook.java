@@ -22,7 +22,7 @@ public abstract class LibraryBook extends Book implements Comparable<LibraryBook
     }
 
     public String toString() {
-	return super.toString() + "CStatus: " + circulationStatus() + "Call Number: " + callNumber;
+	return super.toString() + "\nCircStatus: " + circulationStatus() + "\nCall Number: " + callNumber;
     }
 
 

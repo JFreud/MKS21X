@@ -82,7 +82,8 @@ public class Barcode implements Comparable<Barcode>{
   public int compareTo(Barcode other){
       _checkDigit = checkSum() % 10;
       String sum = getWhole();
-      String  othersum = other
+      String  othersum = other.getWhole();
+      return sum.compareTo(othersum);
   }
     
 }

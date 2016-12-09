@@ -10,7 +10,6 @@ public class Barcode implements Comparable<Barcode>{
 	  throw new IllegalArgumentException();
       }
       _zip = zip;
-      toCode();
   }
 
 
@@ -19,9 +18,9 @@ public class Barcode implements Comparable<Barcode>{
       return copy;
 }
 
-  public String toCode() {
+  public static String toCode(String zip) {
       String barcoded = "";
-      for (char c : (_zip + checkSum() % 10).toCharArray()){
+      for (char c : (zip + checkSum(zip) % 10).toCharArray()){
 	  //barcoded += coded[reference.indexOf(c - '0')];
 	  switch (c) {
 	  case '1' : barcoded += ":::||";
@@ -50,25 +49,27 @@ public class Barcode implements Comparable<Barcode>{
        return "|" + barcoded + "|";
   }
 
+
+
     public String getWhole() {
-      _checkDigit = checkSum() % 10;
+      _checkDigit = checkSum(_zip) % 10;
       return _zip + Integer.toString(_checkDigit);
     }
       
 
-  private int checkSum(){
+  private static int checkSum(String zip){
       int s = 0;
-      for (char c : _zip.toCharArray()){
+      for (char c : zip.toCharArray()){
 	  s += c - '0';}
       return s;
 }
  
   public String toString(){
-      return _zip + " " + Integer.toString(checkSum() % 10) + " " + toCode();
+      return _zip + " " + Integer.toString(checkSum(_zip) % 10) + " " + toCode(_zip);
   }
 
   public int compareTo(Barcode other){
-      _checkDigit = checkSum() % 10;
+      _checkDigit = checkSum(_zip) % 10;
       String sum = getWhole();
       String  othersum = other.getWhole();
       return sum.compareTo(othersum);

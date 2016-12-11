@@ -49,6 +49,35 @@ public class Barcode implements Comparable<Barcode>{
        return "|" + barcoded + "|";
   }
 
+    public static String toZip(String barcode) {
+	String zip = "";
+	for (int i = 1; i < barcode.length() - 6; i+=5) {
+	    switch (barcode.substring(i, i + 5)) {
+	    case ":::||" : zip += '1';
+		break;
+	    case "::|:|" : zip += '2';
+		break;
+	    case "::||:" : zip += '3';
+		break;
+	    case ":|::|" : zip += '4';
+		break;
+	    case ":|:|:" : zip += '5';
+		break;
+	    case ":||::" : zip += '6';
+		break;
+	    case "|:::|" : zip += '7';
+		break;
+	    case "|::|:" : zip += '8';
+		break;
+	    case "|:|::" : zip += '9';
+		break;
+	    case "||:::" : zip += '0';
+		break;
+	    default: throw new IllegalArgumentException();
+	    }
+	}
+	return zip;
+    }
 
 
     public String getWhole() {
@@ -69,7 +98,6 @@ public class Barcode implements Comparable<Barcode>{
   }
 
   public int compareTo(Barcode other){
-      _checkDigit = checkSum(_zip) % 10;
       String sum = getWhole();
       String  othersum = other.getWhole();
       return sum.compareTo(othersum);

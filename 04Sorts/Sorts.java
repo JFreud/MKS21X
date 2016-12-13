@@ -10,12 +10,15 @@ public class Sorts{
   *@param data  the elements to be sorted.
   */
   public static void selectionSort(int[] data){  
-      for (int i = 0; i < data.length -1; i++) {
+      for (int i = 0; i < data.length; i++) {
 	  int placeholder = 0;
-	  for( int j = i; j < data.length-1; j++) {
-	      if (j < i) {
-		  placeholder = i;
-		  data [i] = j;
+	  for( int j = i; j < data.length; j++) {
+	      // System.out.println("h");
+	      if (data[j] < data[i]) {
+		  //System.out.println("i");
+		  placeholder = data[i];
+		  data [i] = data[j];
+		  data[j] = placeholder;
 	      }
 	  }
       }

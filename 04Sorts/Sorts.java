@@ -13,9 +13,7 @@ public class Sorts{
       for (int i = 0; i < data.length; i++) {
 	  int placeholder = 0;
 	  for( int j = i; j < data.length; j++) {
-	      // System.out.println("h");
 	      if (data[j] < data[i]) {
-		  //System.out.println("i");
 		  placeholder = data[i];
 		  data [i] = data[j];
 		  data[j] = placeholder;
@@ -23,11 +21,12 @@ public class Sorts{
 	  }
       }
   }
+
     public static void main (String[] args) {
-	int[] data = {1,63,12,5,1235,12};
+	int[] data = {1,63,12,5,1235,12,-7};
 	selectionSort(data);
-	for(int i = 0; i < data.length; i ++ ) {
-	    System.out.println(data[i]);
+	for(int i : data) {
+	    System.out.println(i);
 	}
     }
 }

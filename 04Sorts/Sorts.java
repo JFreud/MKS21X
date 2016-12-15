@@ -64,6 +64,12 @@ public class Sorts{
 	for(int i : data) {
 	    System.out.println(i);
 	}
+	System.out.println();
+	int[] data2 = {1};
+        bubbleSort(data2);
+	for(int i : data2) {
+	    System.out.println(i);
+	}
     }
 }
 

@@ -38,11 +38,29 @@ public class Sorts{
 	}
     }
 
-		    
+    public static void bubbleSort(int[] data) {
+	int temp;
+	int swaps;
+	boolean sorted = false;
+	for (int j = 0; j < data.length - 1 && sorted == false; j++) {
+	    swaps = 0;
+	for (int i = 0; i < data.length - 1; i++) {
+	    if (data[i + 1] < data[i]) {
+		temp = data[i];
+		data[i] = data[i + 1];
+		data[i + 1] = temp;
+		swaps += 1;
+	    }
+	}
+	if (swaps == 0) {
+	    sorted = true;
+	}
+	}
+    }	
 
     public static void main (String[] args) {
 	int[] data = {1,63,12,5,1235,12,-7};
-	insertionSort(data);
+	bubbleSort(data);
 	for(int i : data) {
 	    System.out.println(i);
 	}

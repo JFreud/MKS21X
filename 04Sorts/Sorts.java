@@ -29,6 +29,7 @@ public class Sorts{
 		if (placeholder < data[j]) {
 		    //System.out.println(j);
 		    data[j+1] = data[j];
+		    data[j] = placeholder;
 		}
 		/*	else {
 		    data[j] = placeholder;

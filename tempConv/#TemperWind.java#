@@ -1,0 +1,9 @@
+import javax.swing.*;
+import java.awt.*;
+public class TemperWind extends JFrame {
+    private Container pane;
+    public TemperWind() {
+	this.setTitle("Temperature Conversion");
+	this.setSize(600, 400);
+	this.setLocation(100,100);
+	this.setDefaultCloseOperation(EXIT_ON_CLOSE);
